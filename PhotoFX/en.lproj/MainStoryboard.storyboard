@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2829" systemVersion="12B19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rAZ-Ze-ibB">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1914"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller - PhotoFX-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ECViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c06-YK-PYe">
+                        <rect key="frame" x="0.0" y="44" width="320" height="436"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="75R-lt-xtO">
+                                <items>
+                                    <barButtonItem title="Album" id="e5K-4f-r5J">
+                                        <connections>
+                                            <action selector="photoFromAlbum" destination="2" id="H22-sf-kOs"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="camera" id="Ler-Iu-GbM">
+                                        <connections>
+                                            <action selector="photoFromCamera" destination="2" id="9ga-fM-Ad7"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1Wv-CG-JO4"/>
+                                    <barButtonItem enabled="NO" title="Filter" id="6I7-5K-JT8">
+                                        <connections>
+                                            <action selector="applyImageFilter:" destination="2" id="HkA-Hp-glY"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView translatesAutoresizingMaskIntoConstraints="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" id="ZPh-vs-wsj"/>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="75R-lt-xtO" firstAttribute="bottom" secondItem="c06-YK-PYe" secondAttribute="bottom" type="default" id="3Pn-4U-J9L"/>
+                            <constraint firstItem="ZPh-vs-wsj" firstAttribute="top" secondItem="c06-YK-PYe" secondAttribute="top" type="default" id="Fgr-Iz-7Gd"/>
+                            <constraint firstItem="ZPh-vs-wsj" firstAttribute="leading" secondItem="c06-YK-PYe" secondAttribute="leading" type="default" id="Qge-7R-2cf"/>
+                            <constraint firstItem="ZPh-vs-wsj" firstAttribute="trailing" secondItem="c06-YK-PYe" secondAttribute="trailing" type="default" id="Qt3-Uu-IP6"/>
+                            <constraint firstItem="75R-lt-xtO" firstAttribute="trailing" secondItem="c06-YK-PYe" secondAttribute="trailing" type="default" id="RFQ-Qg-v1H"/>
+                            <constraint firstItem="ZPh-vs-wsj" firstAttribute="bottom" secondItem="75R-lt-xtO" secondAttribute="top" type="default" id="WIC-68-yKd"/>
+                            <constraint firstItem="75R-lt-xtO" firstAttribute="leading" secondItem="c06-YK-PYe" secondAttribute="leading" type="default" id="lfy-HE-P7S"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="PhotoFX" id="e1d-Re-eO7">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="i3P-f9-NFi">
+                            <connections>
+                                <action selector="saveImageToAlbum" destination="2" id="t4M-Dj-MQW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="filterButton" destination="6I7-5K-JT8" id="6gc-uM-0EM"/>
+                        <outlet property="saveButton" destination="i3P-f9-NFi" id="66W-OC-C9x"/>
+                        <outlet property="selectedImageView" destination="ZPh-vs-wsj" id="c8g-Y8-8gA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="960" y="182"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qcy-jB-CpL">
+            <objects>
+                <navigationController id="rAZ-Ze-ibB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="GtQ-sg-iAX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="bob-lu-afg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J7t-mY-ebf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="497" y="182"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
